@@ -19,4 +19,5 @@ class Solution:
 
         res = [one_suffix_array[0]] + res + [zero_prefix_array[-1]]
         mx = max(res)
+
         return [i for i, e in enumerate(res) if e == mx]
