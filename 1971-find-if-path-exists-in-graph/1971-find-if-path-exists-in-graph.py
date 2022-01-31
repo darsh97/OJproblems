@@ -1,3 +1,4 @@
+
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         graph = defaultdict(list)
@@ -7,17 +8,18 @@ class Solution:
             graph[u].append(v)
             graph[v].append(u)
 
-        def dfs(v):
-            nonlocal seen
-            seen[v] = True
+        q = deque([source, ])
 
-            if v == destination:
+        while q:
+            node = q.popleft()
+
+            seen[node] = True
+
+            if node == destination:
                 return True
 
-            for u in graph[v]:
-                if not seen[u] and dfs(u):
-                    return True
+            for u in graph[node]:
+                if not seen[u]:
+                    q.append(u)
 
-            return False
-        
-        return dfs(source)
+        return False
