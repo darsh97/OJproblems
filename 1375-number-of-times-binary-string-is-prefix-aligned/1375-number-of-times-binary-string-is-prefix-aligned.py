@@ -5,7 +5,6 @@ class Solution:
         cnt = 0
         for l in light:
             last_one = max(last_one, l)
-            if first_zero >= last_one:
-                cnt += 1
+            cnt += first_zero >= last_one
             first_zero += 1
         return cnt
