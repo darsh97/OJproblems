@@ -1,6 +1,5 @@
-class MinMaxQueue(deque):
+class MinMaxQueue():
     def __init__(self):
-        super().__init__()
         self.Q = deque([])
         self._miQ = deque([])
         self._mxQ = deque([])
@@ -54,10 +53,13 @@ class Solution:
         for e in nums:
             if not q.Q:
                 q.enque(e)
+                
             else:
-                while q.Q and q.get_max - q.get_min > limit:
+                while q.Q and ((q.get_max - q.get_min) > limit):
                     q.deque()
+                    
                 res = max(len(q.Q), res)
+                
                 q.enque(e)
 
         return res
