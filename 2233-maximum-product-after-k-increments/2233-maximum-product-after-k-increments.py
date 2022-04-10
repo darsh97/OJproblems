@@ -10,4 +10,5 @@ class Solution:
 
         for e in nums:
             res = (res * e % M) % M
+            
         return  res % M
