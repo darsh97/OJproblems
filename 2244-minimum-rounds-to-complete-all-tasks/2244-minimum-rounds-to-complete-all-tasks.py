@@ -3,13 +3,11 @@
 def find_way(n):
     three_times = floor(n / 3)
     diff = n % 3
-
+    
     if not diff:
         return three_times
-    elif diff == 1:
-        return (three_times - 1) + ((n - ((three_times - 1) * 3)) // 2)     
-    else:
-        return (three_times - 1) + ((n - ((three_times - 1) * 3)) // 2)
+    
+    return (three_times - 1) + ((n - ((three_times - 1) * 3)) // 2)
 
 
 class Solution:
