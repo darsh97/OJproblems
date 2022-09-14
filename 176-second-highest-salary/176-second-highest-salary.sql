@@ -1,6 +1,6 @@
 select max(salary) as `SecondHighestSalary`
 from employee
-where salary <> (
+where salary not in (
     select max(salary)
     from employee
 )
